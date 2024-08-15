@@ -7,3 +7,6 @@
 * reduce()
 * find()
 * findIndex()
+
+    some()
+    every()

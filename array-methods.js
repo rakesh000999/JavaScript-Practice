@@ -9,7 +9,7 @@ console.log(students);
 
 // Array Mthods:
 
-// 1. legth
+// 1. length
 console.log("Length of students: " + students.length);
 
 // 2. toString()
@@ -71,4 +71,3 @@ console.log(childrens.slice());
 // console.log(childrens.slice(0, 1));
 console.log(childrens.slice(0, -1));
 console.log(childrens);
-
