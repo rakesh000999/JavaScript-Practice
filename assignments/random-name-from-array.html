@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The student is:</h1>
+    <p></p>
+
+    <button>Get student</button>
+    <script>
+        const name = [
+            "Aarati",
+            "Anjali",
+            "Bibek",
+            "Binod",
+            "Dipesh",
+            "Kritika",
+            "Madan",
+            "Manoj",
+            "Nisha",
+            "Prajwal",
+            "Prabhat",
+            "Pratiksha",
+            "Ramesh",
+            "Rashmi",
+            "Sandeep",
+            "Sarita",
+            "Shreya",
+            "Sneha",
+            "Suman",
+            "Sunil"
+        ];
+        const button = document.querySelector("button");
+        
+        button.addEventListener("click", () => {
+            const number = Math.floor(Math.random() * name.length);
+            console.log(number);
+
+            const studentName = document.querySelector("p");
+            studentName.textContent = name[number];
+        });
+    </script>
+</body>
+
+</html>

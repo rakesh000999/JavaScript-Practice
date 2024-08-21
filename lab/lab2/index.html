@@ -1,0 +1,33 @@
+<!-- Lab 2: Adding JavaScript to a Page
+Objective: Learn different methods to add JavaScript code to an HTML page.
+1. Create an HTML file.
+2. Add an inline JavaScript code block within the HTML file.
+3. Create an external JavaScript file and link it to the HTML file.
+4. Use the "defer" and "async" attributes when linking an external JavaScript file and
+observe the differences. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Integration</title>
+</head>
+
+<body>
+    <h2>JavaScript Integration</h2>
+
+    <!-- Inline JavaScript -->
+    <button onclick="console.log('Inline JavaScript activated after button is clicked!')">Click</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+        console.log("Internal JavaScript");
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Output Lab</title>
+</head>
+
+<body>
+    <p id="message">This message will be updated by JavaScript.</p>
+
+    <button onclick="updateContent()">Update</button>
+
+    <script>
+
+        // Output messages to the browser console
+        console.log('Console.log: Page Loaded Successfully');
+
+        // Display an alert box
+        alert('Alert: This is a message from JavaScript!');
+
+        // Function to dynamically update HTML content
+        function updateContent() {
+            document.getElementById('message').innerText = 'Content updated by JavaScript!';
+        }
+
+    </script>
+</body>
+
+</html>

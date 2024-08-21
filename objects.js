@@ -38,3 +38,14 @@ const teacher = {
 
 console.log(teacher);
 console.log(teacher.fullName());
+
+// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const myFriend = new Person("Ram", "Sharma", 23, "brown");
+console.log(myFriend.firstName);
