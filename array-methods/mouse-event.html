@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav-list {
+            padding: 20px 50px;
+            display: flex;
+            list-style-type: none;
+            color: white;
+        }
+
+        li {
+            padding: 5px 20px;
+            cursor: pointer;
+            font-size: large;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .category-info {
+            width: 200px;
+            background: #000;
+            color: white;
+            margin-left: 200px;
+            position: absolute;
+            display: none;
+        }
+
+        .toggle-category {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <ul class="nav-list">
+            <li id="home">Home</li>
+            <li id="about">About</li>
+            <li id="category">Category <span>⬇️</span></li>
+            <li id="contact">Contact</li>
+        </ul>
+    </nav>
+    <div class="category-info">
+        <ul>
+            <li>Sports</li>
+            <li>Entertainment</li>
+            <li>Science</li>
+            <li>Technology</li>
+            <li>Technology</li>
+            <li>Technology</li>
+        </ul>
+    </div>
+    <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+
+    <div id="animate"> </div>
+
+    <script>
+
+        const category = document.getElementById("category");
+        const categoryInfo = document.querySelector(".category-info");
+        const span = document.getElementsByTagName("span");
+
+        category.addEventListener("mouseenter", () => {
+            categoryInfo.classList.add("toggle-category");
+            span[0].textContent = "⬆️";
+        })
+        categoryInfo.addEventListener("mouseleave", () => {
+            categoryInfo.classList.remove("toggle-category");
+            span[0].textContent = "⬇️";
+
+        })
+
+        document.addEventListener("mousedown", () => {
+            categoryInfo.classList.remove("toggle-category");
+            span[0].textContent = "⬇️";
+        })
+
+        document.addEventListener("mouseup", () => {
+            const newElement = document.createElement("p")
+            newElement.textContent = "I am added after mouseup event."
+            newElement.style.backgroundColor = "lightblue";
+            document.body.appendChild(newElement);
+        })
+
+        const mouseMove = document.getElementById("nav");
+        mouseMove.style.backgroundColor = "#333333";
+
+        document.addEventListener("mousemove", (e) => {
+            mouseMove.style.backgroundColor = `rgb(
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)},
+            ${Math.floor(Math.random() * 256)}
+            )`;
+        });
+    </script>
+</body>
+
+</html>
