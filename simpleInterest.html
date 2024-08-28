@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple interest</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" name="form">
+        <label for="principle">Principle</label>
+        <input type="number" name="principle" id="principle">
+        <br>
+        <span class="pError error"></span>
+        <br>
+
+        <label for="time">Time</label>
+        <input type="number" name="time" id="time">
+        <br>
+        <span class="tError error"></span>
+        <br>
+
+        <label for="rate">Rate</label>
+        <input type="number" name="rate" id="rate">
+        <br>
+        <span class="rError error"></span>
+        <br>
+
+        <input type="submit" name="submit" value="calculate">
+        <p class="showSI"></p>
+    </form>
+
+    <script>
+        let isValid = false;
+        const p = document.querySelector("#principle")
+        const t = document.querySelector("#time")
+        const r = document.querySelector("#rate")
+
+        // p
+        p.addEventListener("input", function () {
+            const pError = document.querySelector(".pError")
+            if (p.value == "") {
+                pError.textContent = "Please provide principle amount!"
+                isValid = false;
+            } else {
+                pError.textContent = "";
+                isValid = true;
+            }
+        })
+
+        // t
+        t.addEventListener("input", function () {
+            const tError = document.querySelector(".tError")
+            if (p.value == "") {
+                tError.textContent = "Please provide time!"
+                isValid = false;
+            } else {
+                tError.textContent = "";
+                isValid = true;
+            }
+        })
+
+        // r
+        r.addEventListener("input", function () {
+            const rError = document.querySelector(".rError")
+            if (p.value == "") {
+                rError.textContent = "Please provide rate!"
+                isValid = false;
+            } else {
+                rError.textContent = "";
+                isValid = true;
+            }
+        })
+
+        // console.log("P :", p.value);
+
+        document.form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            si = (p.value * t.value * r.value) / 100;
+            console.log("si", si);
+
+            if (isValid) {
+                const showSI = document.querySelector(".showSI");
+                showSI.textContent = "Simple Interest is: " + si;
+            } else {
+                console.log("not valid");
+            }
+        })
+        // si = (p.value * t.value * r.value) / 100;
+        // console.log("si", si);
+
+        // if (isValid) {
+        //     const showSI = document.querySelector(".showSI");
+        //     showSI.textContent = "Simple Interest is: " + si;
+        // } else {
+        //     console.log("not valid");
+        // }
+    </script>
+</body>
+
+</html>

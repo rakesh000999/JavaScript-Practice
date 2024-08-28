@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Form</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Book Form</legend>
+        <form action="">
+
+            <label for="firstName">Fast Name</label>
+            <input type="text" id="firstName" name="firstName">
+            <br>
+            <span class="firstNameError error"></span>
+            <br>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName">
+            <br>
+            <span class="lastNameError error"></span>
+            <br>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <span class="emailError error"></span>
+            <br>
+
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" name="isbn">
+            <br>
+            <span class="isbnError error"></span>
+            <br>
+
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity">
+            <br>
+            <span class="quantityError error"></span>
+            <br>
+
+            <label for="rate">Rate</label>
+            <input type="number" id="rate" name="rate">
+            <br>
+            <span class="rateError error"></span>
+            <br>
+
+            <label for="total">Total</label>
+            <input type="text" id="total" name="total" readonly>
+            <br>
+            <span class="error"></span>
+            <br>
+
+            <label for="category">Category</label>
+            <select name="country" id="country">
+                <option value="">Select a country</option>
+                <option value="np">Nepal</option>
+                <option value="in">India</option>
+            </select>
+            <br>
+            <span class="error"></span>
+            <br>
+
+            <input type="submit" name="submit" value="save" id="">
+            <input type="reset" name="reset" value="clear" id="">
+        </form>
+
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+
+</html>

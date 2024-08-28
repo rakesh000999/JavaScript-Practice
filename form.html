@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        fieldset {
+            width: 280px;
+        }
+
+        .formAction {
+            padding-top: 20px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        span {
+            clear: both;
+        }
+
+        .test label {
+            width: 30%;
+        }
+
+        .test {
+            padding-top: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .submit,
+        .reset {
+            width: 100%;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Employe Register </legend>
+        <form name="registerEmployee" id="registerEmployee">
+
+            <div class="outer">
+                <div class="test">
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                </div>
+                <span class="error usernameError"></span>
+            </div>
+            <!-- <div class="outer">
+                <div class="label">
+                    <label for="username">Username</label>
+                </div>
+                <div class="input">
+                    <input type="text" id="username">
+                </div>
+                <span class="error usernameError"></span>
+            </div> -->
+            <div class="outer">
+                <div class="test">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <span class="error emailError"></span>
+            </div>
+            <div class="outer">
+                <div class="test">
+                    <label for="password">Password</label>
+
+                    <input type="password" name="password" id="password">
+                </div>
+                <span class="error passwordError"></span>
+            </div>
+            <div class="outer">
+                <div class="test">
+                    <label for="gender">Gender</label>
+                    <input type="radio" value="m" name="gender"> Male
+                    <input type="radio" value="f" name="gender"> Female
+                </div>
+                <span class="error genderError"></span>
+            </div>
+            <div class="outer">
+                <div class="test">
+                    <label for="country">Country</label>
+                    <select name="country" id="">
+                        <option value="">Select a country</option>
+                        <option value="np">Nepal</option>
+                        <option value="in">India</option>
+                        <option value="ch">China</option>
+                    </select>
+                </div>
+                <span class="error countryError"></span>
+            </div>
+            <div class="formAction">
+                <input class="submit" type="submit" name="submit" id="submit" value="Register">
+                <input class="reset" type="reset" name="clear" id="reset" value="Clear">
+            </div>
+        </form>
+    </fieldset>
+
+    <script>
+        document.forms["registerEmployee"].addEventListener("submit", function (e) {
+            e.preventDefault();
+            // console.log("form has been submitted!");
+
+            const username = document.forms["registerEmployee"].username.value;
+            const email = document.forms.registerEmployee.email.value;
+            const password = document.forms.registerEmployee.password.value;
+            const gender = document.forms.registerEmployee.gender.value;
+            const country = document.forms.registerEmployee.country.value;
+            // console.log(`${username} ${email} ${password} ${gender} ${country}`);
+
+            const usernameError = document.querySelector(".usernameError");
+            const emailError = document.querySelector(".emailError");
+            const passwordError = document.querySelector(".passwordError");
+            const genderError = document.querySelector(".genderError");
+            const countryError = document.querySelector(".countryError");
+
+            let isValid = true;
+
+            // Userrname Validation
+            if (username == '' || username.trim() == '') {
+                usernameError.textContent = 'Username should not be empty';
+                isValid = false;
+            } else {
+                console.log("Username is: ", username)
+                usernameError.textContent = '';
+            }
+
+            // Email Validation
+            if (email == '' || email.trim() == '') {
+                emailError.textContent = 'Email should not be empty';
+                isValid = false;
+            } else {
+                console.log("Email is: ", email)
+                emailError.textContent = '';
+            }
+
+            // Password Validation
+            if (password == '') {
+                passwordError.textContent = 'Password should not be empty';
+                isValid = false;
+            } else {
+                console.log("Password is: ", password)
+                passwordError.textContent = '';
+            }
+
+            // Gender Validation
+            if (gender == '') {
+                genderError.textContent = 'Please select a gender';
+                isValid = false;
+            } else {
+                console.log("Gender is: ", gender)
+                genderError.textContent = '';
+            }
+
+            // Userrname Validation
+            if (country == '') {
+                countryError.textContent = 'Please select a country';
+                isValid = false;
+            } else {
+                console.log("Country is: ", country)
+                countryError.textContent = '';
+            }
+
+            if (isValid) {
+                console.log("The form is valid!!")
+            }
+        });
+    </script>
+
+</body>
+
+</html>
