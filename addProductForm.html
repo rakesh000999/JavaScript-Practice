@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product Form</title>
+    <style>
+      .error {
+        color: red;
+      }
+      fieldset {
+        margin: auto;
+        width: 300px;
+      }
+      span{
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      body{font-size: larger;}
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Add Product Form</legend>
+      <form action="">
+
+        <!-- Product Name -->
+        <label for="pname">Product Name</label>
+        <input type="text" id="pname" name="pname" />
+        <br />
+        <span class="pnameError error"></span>
+        <br />
+
+        <!-- Category -->
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="apple">Apple</option>
+          <option value="samsung">Samsung</option>
+          <option value="oppo">Oppo</option>
+          <option value="nokia">Nokia</option>
+        </select>
+        <br />
+        <span class="categoryError error"></span>
+        <br />
+
+        <!-- Color -->
+        <label for="color">Color</label>
+        <input type="radio" name="color" value="red" id="red" /> Red
+        <input type="radio" name="color" value="blue" /> Blue
+        <input type="radio" name="color" value="black" /> Black
+        <br />
+        <span class="colorError error"></span>
+        <br />
+
+        <!-- Model No -->
+        <label for="modelNo">Model No</label>
+        <input type="text" name="modelNo" id="modelNo" />
+        <br />
+        <span class="modelNoError error"></span>
+        <br />
+
+        <!-- Accssories -->
+        <label for="accessories">Accssories</label>
+        <input
+          type="checkbox"
+          value="item1"
+          name="item1"
+          class="accessories"
+          checked
+        />
+        Item1
+        <input type="checkbox" value="item2" name="item2" class="accessories" />
+        Item2
+        <input type="checkbox" value="item3" name="item3" class="accessories" />
+        item3
+        <br />
+        <span class="accessoriesError error"></span>
+        <br />
+
+        <!-- Price -->
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" />
+        <br />
+        <span class="priceError error"></span>
+        <br />
+
+        <input type="submit" />
+      </form>
+    </fieldset>
+
+    <script>
+      const pName = document.querySelector("#pname");
+      const category = document.querySelector("#category");
+        const color = document.querySelector("#pname");
+      const modelNo = document.querySelector("#modelNo");
+      const accessories = document.querySelectorAll(".accessories");
+      const price = document.querySelector("#price");
+      console.log(accessories[0].value);
+
+      const pNameError = document.querySelector(".pnameError");
+      pName.addEventListener("input", function () {
+        const pNamePattern = /^[A-Za-z]+$/;
+        if (pName.value == "") {
+          pNameError.textContent = "Product name should not be empty!";
+        } else if (!pName.value.match(pNamePattern)) {
+          pNameError.textContent =
+            "Product name should contain alphabets only!";
+        } else if (pName.value.length > 20 || pName.value.length < 5) {
+          pNameError.textContent = "Length should be between 2-20 characters!";
+        } else {
+          pNameError.textContent = "";
+        }
+      });
+
+      const modelNoError = document.querySelector(".modelNameError");
+      modelNo.addEventListener("input", function () {
+        const modelNoPattern = /^[0-9]+$/;
+        if (modelNo.value == "") {
+          modelNoError.textContent = "Product name should not be empty!";
+        } else if (!modelNo.value.match(modelNoPattern)) {
+          modelNoError.textContent =
+            "Product name should contain alphabets only!";
+        }  else {
+          modelNoError.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>

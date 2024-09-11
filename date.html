@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const date = new Date();
+        // const date = new Date("2024-01-01");
+        console.log(date);
+
+        // year, month, day, hour, minute, second, millisecond
+        const date1 = new Date(2024, 10, 20, 10, 25, 30, 10);
+        console.log(date1);
+        const date2 = new Date(2024, 10, 20, 10, 25, 30);
+        console.log(date2);
+        const date3 = new Date(2024, 10, 20, 10, 25);
+        console.log(date3);
+        const date4 = new Date(2024, 10, 20, 10);
+        console.log(date4);
+        const date5 = new Date(2024, 10, 20);
+        console.log(date5);
+        const date6 = new Date(2024, 10);
+        console.log(date6);
+        const date7 = new Date(2024);  //milli second
+        console.log(date7);
+
+        // (9, 12, 13) // 1909 ...
+        // (99, 12, 13)   // 1999 , ...
+
+        console.log(new Date(1725153177764));
+
+        console.log("Full year: ", date1.getFullYear()); //return year
+        console.log("Month: ", date1.getMonth()); // 0 - January
+        console.log("Date: ", date1.getDate()); // 1-31
+        console.log("Day: ", date1.getDay()); //0-6
+
+        const d = new Date();
+        d.setFullYear("1970");
+        console.log(d);
+
+        d.setMonth(11);
+        console.log(d);
+
+        d.setHours(4);
+        console.log(d);
+
+        d.setFullYear(1970);
+        console.log(d);
+
+        d.setDate(d.getDate() + 150)
+        console.log(d);
+
+        const dat = "2024-09-01";
+        Date.parse(dat);
+        console.log(dat);
+
+        // Date formats
+        /**
+        *ISO Date -> "2024*01*01"
+        *Short Date -> "01/20/2024"
+        *Long Date -> "Mar 25 2024" or "25 Mar 2024"       
+        */
+
+        /**
+         * d1 = '2024-01-01'
+         * d2 = "2024-02-02"
+         * 
+         * find which date is larger and find the difference date
+         * 
+        */
+
+        const d1 = '2024-01-01';
+        const d2 = '2024-01-03';
+
+
+        const dateCal1 = new Date(d1)
+        const dateCal2 = new Date(d2)
+
+        const largerDate = dateCal1 > dateCal2 ? dateCal1 : dateCal2;
+        const smallerDate = dateCal1 <= dateCal2 ? dateCal1 : dateCal2;
+
+        console.log("The larger date is:", largerDate);
+
+        const differenceDate = largerDate - smallerDate;
+
+        console.log("The difference in date:", differenceDate / (1000 * 60 * 60 * 24), "days");
+    </script>
+</body>
+
+</html>

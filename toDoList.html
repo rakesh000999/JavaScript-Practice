@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <style>
+        body {
+            background: gainsboro;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .to-do-app {
+            border: 2px solid;
+            margin: auto;
+            width: 500px;
+            padding: 20px;
+            background: lightseagreen;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+        }
+
+        input {
+            font-size: larger;
+        }
+
+        #inputTask {
+            width: 400px;
+            padding: 5px;
+        }
+
+        #submit {
+            background: green;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            background: lightgreen;
+        }
+
+        li {
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="to-do-app">
+        <h1>To-do List</h1>
+        <div>
+            <form action="">
+                <input type="text" id="inputTask" name="" placeholder="Enter your task">
+                <input type="submit" value="Add" id="submit">
+
+            </form>
+            <div class="tasks"></div>
+        </div>
+    </div>
+
+    <script>
+        const inputTask = document.querySelector("#inputTask");
+        const submitBtn = document.querySelector("#submit");
+
+        const taskList = document.querySelector(".tasks");
+
+        const createList = document.createElement("ul");
+        taskList.appendChild(createList);
+
+        // submitBtn.addEventListener("click", function (e) {
+
+        //     e.preventDefault();
+        //     if (inputTask.value != "") {
+        //         const addTask = document.createElement("li");
+
+        //         addTask.style.marginTop = "10px"
+        //         createList.appendChild(addTask);
+        //         addTask.textContent = inputTask.value;
+
+        //         const removeTask = document.createElement("span");
+
+        //         removeTask.textContent = " Delete"
+        //         removeTask.style.backgroundColor = "red";
+        //         removeTask.style.color = "white";
+        //         removeTask.style.marginLeft = "15px";
+        //         removeTask.style.padding = "2px";
+        //         removeTask.style.cursor = "pointer";
+        //         addTask.appendChild(removeTask);
+
+        //         removeTask.addEventListener("click", function () {
+        //             addTask.remove();
+        //         })
+        //     }
+
+        //     inputTask.value = "";
+        // })
+
+        submitBtn.addEventListener("click", function (e) {
+
+            e.preventDefault();
+            if (inputTask.value != "") {
+                const addTask = document.createElement("li");
+
+                addTask.style.marginTop = "10px"
+                createList.appendChild(addTask);
+                addTask.textContent = inputTask.value;
+
+                const editTask = document.createElement("span");
+                const removeTask = document.createElement("span");
+                const doneTask = document.createElement("span");
+
+
+                editTask.textContent = "Edit"
+                editTask.style.backgroundColor = "blue";
+                editTask.style.color = "white";
+                editTask.style.marginLeft = "15px";
+                editTask.style.padding = "2px";
+                editTask.style.cursor = "pointer";
+
+                doneTask.textContent = " Done"
+                doneTask.style.backgroundColor = "green";
+                doneTask.style.color = "white";
+                doneTask.style.marginLeft = "15px";
+                doneTask.style.padding = "2px";
+                doneTask.style.cursor = "pointer";
+
+                removeTask.textContent = "Remove"
+                removeTask.style.backgroundColor = "red";
+                removeTask.style.color = "white";
+                removeTask.style.marginLeft = "15px";
+                removeTask.style.padding = "2px";
+                removeTask.style.cursor = "pointer";
+
+                addTask.appendChild(editTask);
+                addTask.appendChild(doneTask);
+                addTask.appendChild(removeTask);
+
+                doneTask.addEventListener("click", function () {
+                    const done = document.createElement("del")
+                    done.textContent = addTask.textContent;
+                    addTask.appendChild(done);
+                })
+
+                removeTask.addEventListener("click", function () {
+                    addTask.remove();
+                })
+            }
+
+            inputTask.value = "";
+        })
+
+    </script>
+</body>
+
+</html>

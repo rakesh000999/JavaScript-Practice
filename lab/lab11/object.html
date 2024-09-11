@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // <!-- 1. Use string object methods to manipulate strings. -->
+
+        // a. Create a string variable with the value of "Hello, World!".
+        console.log("String object methods:");
+
+        let greeting = "Hello, World!";
+        let world = greeting.slice(7, 12);
+
+        console.log("toLowerCase:", world.toLowerCase())
+        console.log("toUpperCase:", greeting.toUpperCase())
+        console.log("charAt:", greeting.charAt(1))
+        console.log("subString:", greeting.substring(0, 5));
+        console.log("slice", greeting.slice(7, 12))
+        console.log("replace:", greeting.replace("World", "JavaScript"))
+        console.log("startsWith:", greeting.startsWith("Hello"))
+        console.log("endsWith", greeting.endsWith("!"))
+        console.log("includes:", greeting.includes("World"))
+        console.log("trim:", greeting.trim())
+        console.log("length:", greeting.length)
+        console.log("repeat:", world.repeat(3));
+
+        // Math object 
+        // Mathematical Constants
+
+        console.log("Math object:");
+
+        console.log("PI:", Math.PI);
+        console.log("E:", Math.E);
+
+        // Generate a random number between 0 and 1
+        console.log("Random:", Math.random());
+
+        // Generate a random number between 1 and 100
+        console.log("Random between 1 and 100:", Math.floor(Math.random() * 100) + 1);
+
+        // Absolute value
+        console.log("Absolute value of -15 -1:", Math.abs(-15) - 1);
+
+        // Square root
+        console.log("Square root of 64 + 1:", Math.sqrt(64) + 1);
+        // Power
+        console.log("3 to the power of 3:", Math.pow(3, 3));
+
+        // Rounding
+        console.log("Round 3.4:", Math.round(3.4));
+        console.log("Floor 4.71:", Math.floor(4.7));
+        console.log("Ceil 42.7:", Math.ceil(42.7));
+
+
+        // 5. Apply regular expressions using the RegExp object.
+        // Create a regex to match the pattern 'hello'
+        console.log("Regular expressions using the RegExp object.");
+
+        const pattern = 'hello';
+        const regex = new RegExp(pattern);
+        const str = "Hello, world!";
+
+        // Test if the pattern 'hello' exists in the string
+        console.log("regex.test(str):", regex.test(str)); // Outputs: false (case-sensitive)
+
+        // Match the pattern 'hello' in the string
+        console.log("str.match(regex):", str.match(regex));
+
+        // Create a regex to match 'WORLD' case-insensitively
+        const regex2 = RegExp('world', 'i'); // 'i' for case-insensitive
+        const string = "Hello, WORLD!";
+
+        // Test if the pattern 'world' exists in the string (case-insensitive)
+        console.log("regex2.test(string):", regex2.test(string)); // Outputs: true
+
+        // Match the pattern 'world' in the string (case-insensitive)
+        console.log(string.match(regex2)); // Outputs: ["WORLD"]
+
+    </script>
+
+</body>
+
+</html>
